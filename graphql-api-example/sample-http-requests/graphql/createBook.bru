@@ -1,0 +1,27 @@
+meta {
+  name: createBook
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: http://localhost:4000
+  body: graphql
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:graphql {
+  mutation CreateNewBook {
+    createBook(
+      input: { title: "The Great Gatsby", author: "F. Scott Fitzgerald" }
+    ) {
+      title
+      author
+    }
+  }
+  
+}

@@ -1,0 +1,22 @@
+meta {
+  name: deleteBook
+  type: graphql
+  seq: 5
+}
+
+post {
+  url: http://localhost:4000
+  body: graphql
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:graphql {
+  mutation DeleteExistingBook {
+    deleteBook(id: "2")
+  }
+  
+}

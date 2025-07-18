@@ -1,0 +1,27 @@
+meta {
+  name: updateBook
+  type: graphql
+  seq: 4
+}
+
+post {
+  url: http://localhost:4000
+  body: graphql
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:graphql {
+  mutation UpdateExistingBook {
+    updateBook(
+      input: { id: "1", title: "The Awakening (Revised)", author: "Kate Chopin" }
+    ) {
+      title
+      author
+    }
+  }
+  
+}
